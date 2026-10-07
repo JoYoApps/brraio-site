@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://brraio.netlify.app/sitemap.xml
