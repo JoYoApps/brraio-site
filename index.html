@@ -29,6 +29,22 @@ h2{font-size:28px;color:var(--navy);margin:0 0 20px}
 .steps li:before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;text-align:center;line-height:36px}
 .price{font-size:40px;font-weight:800;color:var(--navy)}.price small{font-size:17px;font-weight:400;color:var(--muted)}
 .cta{text-align:center}
+.band{background:var(--navy);color:#fff;text-align:center;padding:40px 0}
+.band .big{font-size:clamp(24px,5vw,34px);font-weight:800;margin:0}
+.band .sub{margin:6px 0 0;color:#19D3A2;font-size:19px;font-weight:600}
+.give{background:linear-gradient(135deg,#0B6E6A,#1385B5);color:#fff;text-align:center}
+.give h2{color:#fff}.give p{max-width:560px;margin:0 auto 12px}.give .fine{font-size:13px;opacity:.85}
+.name{text-align:center}.name .letters{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:18px 0}
+.name .l{width:46px;height:56px;border-radius:10px;background:var(--navy);color:#fff;font-weight:800;font-size:28px;line-height:56px}
+.name .l.b{background:#B3261E}.name .l.a{background:#1385B5}
+.name p{max-width:560px;margin:0 auto 10px}
+.teams{background:#fff}.teams .grid{margin-bottom:18px}
+form{max-width:560px;margin:0 auto;text-align:left;display:grid;gap:12px}
+label{font-weight:600;font-size:15px;color:var(--navy);display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;width:100%;background:#fff}
+textarea{min-height:110px;resize:vertical}.hp{position:absolute;left:-9999px}
+.msg{padding:12px;border-radius:10px;display:none}.msg.ok{display:block;background:#E7F3E8;color:#1b5e20}.msg.bad{display:block;background:#FBE7E5;color:#8c1d18}
+.small{font-size:13px;color:var(--muted);margin-top:16px}
 footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer a{color:#fff}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Brraio","url":"https://brraio.netlify.app/","publisher":{"@type":"Organization","name":"JoYo Group Pty Ltd"}}</script>
@@ -36,24 +52,61 @@ footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer
 <header class="hero"><div class="wrap">
 <img class="logo" src="logo-horizontal-white.png" alt="Brraio">
 <h1>Get confident reading ECGs.</h1>
-<p>Short, practical ECG practice for paramedics, nurses, doctors and students. Made by medicos, for medicos.</p>
+<p>Short, practical ECG practice for paramedics, nurses, doctors and students.</p>
 <a class="btn" href="https://brraio.netlify.app/">Start your free 3-day trial</a>
 <div class="note">No payment until your trial ends. Works on your phone, no download needed.</div>
 </div></header>
 
-<section><div class="wrap"><h2>Why Brraio</h2><div class="grid">
+<div class="band"><div class="wrap"><p class="big">Made by medicos, for medicos.</p><p class="sub">Medicos supporting medicos.</p></div></div>
+
+<section class="name"><div class="wrap"><h2>What's in the name?</h2>
+<div class="letters"><span class="l b">B</span><span class="l b">R</span><span class="l b">R</span><span class="l a">A</span><span class="l a">I</span><span class="l a">O</span></div>
+<p><b>B</b>lood <b>R</b>ound and <b>R</b>ound. <b>A</b>ir <b>I</b>n and <b>O</b>ut.</p>
+<p>The core foundation of medicine: circulation and breathing, the basics of care. Everything we teach starts there.</p></div></section>
+
+<section class="alt"><div class="wrap"><h2>Why Brraio</h2><div class="grid">
 <div class="card"><h3>Start with your ECG Baseline</h3><p>A short quiz shows where you are now, then builds a learning plan around your gaps.</p></div>
 <div class="card"><h3>Practise real rhythms</h3><p>Work through 12-lead ECGs with clear explanations after every answer.</p></div>
 <div class="card"><h3>New challenge every Monday</h3><p>Fresh content each week, so there is always something new to try.</p></div>
-<div class="card"><h3>CPD log and certificates</h3><p>Keep a record of your study time and download certificates for your records.</p></div>
 </div></div></section>
+
+<section><div class="wrap"><h2>Built for your career</h2><div class="grid">
+<div class="card"><h3>CPD made easy</h3><p>Brraio logs your study time and gives you certificates, so your CPD record is ready when you need it.</p></div>
+<div class="card"><h3>Possible tax deduction</h3><p>Self-education related to your current work may be tax deductible. Keep your receipts and confirm with your accountant or the ATO.</p></div>
+</div>
+<p class="small">Brraio is a study guide, not a formal or accredited course. Check what your employer or registration body accepts as CPD.</p></div></section>
 
 <section class="alt"><div class="wrap"><h2>How it works</h2>
 <ol class="steps">
-<li><b>Tap the button.</b> Open Brraio in your phone's browser and start your free trial.</li>
-<li><b>Take your ECG Baseline.</b> A quick or complete check of where you stand.</li>
-<li><b>Practise a little each day.</b> Add Brraio to your home screen and use it like an app.</li>
+<li><b>Complete the ECG Baseline.</b> A short quiz shows where your skills are strong, and where they have lapsed or are missing.</li>
+<li><b>Get training that suits you.</b> Brraio builds learning modules around your skill level and your gaps, so you spend time where it counts.</li>
+<li><b>Practise a little each day.</b> Add Brraio to your home screen and use it like an app, with a new challenge every Monday.</li>
 </ol></div></section>
+
+<section class="teams"><div class="wrap"><h2>Teams, stations and universities</h2>
+<div class="grid">
+<div class="card"><h3>Stations and services</h3><p>Give your whole crew access, with one invoice and a code for each person.</p></div>
+<div class="card"><h3>Universities and students</h3><p>Prepare paramedic, nursing and medical students for placement with ECG practice they can do anywhere.</p></div>
+<div class="card"><h3>Bulk pricing</h3><p>Discounts for groups. Tell us how many people and we'll send a quote.</p></div>
+</div>
+<p><a class="btn dark" href="#contact">Ask about team plans</a></p></div></section>
+
+<section class="give"><div class="wrap"><h2>Give a month, get a month</h2>
+<p>Love Brraio? Share it with a colleague. When they join, you both get a month free.</p>
+<p class="fine">Medicos supporting medicos. Terms apply.</p></div></section>
+
+<section id="contact" class="alt"><div class="wrap cta"><h2>Questions? Get in touch</h2><p>Ask us anything, or tell us about your team or university. We reply by email.</p>
+<form id="enq" novalidate>
+<label>Your name<input name="name" autocomplete="name" maxlength="80"></label>
+<label>Email<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+<label>I'm asking about<select name="type"><option>A question about Brraio</option><option>A team or station plan</option><option>A university or student plan</option><option>Something else</option></select></label>
+<label>Organisation (optional)<input name="org" maxlength="100"></label>
+<label>Your message<textarea name="message" required maxlength="1500"></textarea></label>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn dark" type="submit" style="border:0;cursor:pointer">Send message</button>
+<div class="msg" id="enqMsg" role="status"></div>
+</form>
+<p class="small">Or email <a href="mailto:admin@joyoevents.com.au">admin@joyoevents.com.au</a>.</p></div></section>
 
 <section><div class="wrap cta"><h2>Simple pricing</h2>
 <div class="price">$10 <small>AUD a month</small></div>
@@ -65,4 +118,20 @@ footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer
 <p><b>Brraio</b> is made by JoYo Group Pty Ltd. Questions? <a href="mailto:admin@joyoevents.com.au">admin@joyoevents.com.au</a></p>
 <p>Brraio is a study guide, not a formal or accredited course. It does not replace your training or clinical practice guidelines.</p>
 </div></footer>
+<script>
+(function(){
+  var API="https://script.google.com/macros/s/AKfycbz3Rsv2R1Qs5Tq7cQoMZlhwIz_AMtz7nvJioYLi-87bEYXkSkBhwOnx_1d5lXNwCilZQg/exec", f=document.getElementById("enq"), m=document.getElementById("enqMsg");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var d={action:"enquiry"}; new FormData(f).forEach(function(v,k){d[k]=String(v);});
+    var b=f.querySelector("button"); b.disabled=true; b.textContent="Sending...";
+    function fail(t){ m.className="msg bad"; m.textContent=t||"Sorry, that didn't send. Please email admin@joyoevents.com.au instead."; b.disabled=false; b.textContent="Send message"; }
+    if(!d.email||!d.message){ fail("Please add your email and a message."); return; }
+    fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)})
+      .then(function(r){return r.json();})
+      .then(function(r){ if(r&&r.ok){ m.className="msg ok"; m.textContent="Thanks! We've got your message and will reply by email soon."; f.reset(); b.textContent="Sent"; } else fail(r&&r.error==="wait"?"Please wait a couple of minutes before sending another.":(r&&r.error==="enquiry"?"Please check your email address and message.":"")); })
+      .catch(function(){ fail(); });
+  });
+})();
+</script>
 </body></html>
