@@ -107,7 +107,7 @@ footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer
 <button class="btn dark" type="submit" style="border:0;cursor:pointer">Send message</button>
 <div class="msg" id="enqMsg" role="status"></div>
 </form>
-<p class="small">Or email <a href="mailto:admin@joyoevents.com.au">admin@joyoevents.com.au</a>.</p></div></section>
+<p class="small">Or <a href="mailto:brraio@joyoevents.com.au">email the Brraio team</a>.</p></div></section>
 
 <section><div class="wrap cta"><h2>Simple pricing</h2>
 <div class="price">$10 <small>AUD a month</small></div>
@@ -116,7 +116,7 @@ footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer
 </div></section>
 
 <footer><div class="wrap">
-<p><b>Brraio</b> is made by JoYo Group Pty Ltd. Questions? <a href="mailto:admin@joyoevents.com.au">admin@joyoevents.com.au</a></p>
+<p><b>Brraio</b> is made by JoYo Group Pty Ltd. Questions? <a href="mailto:brraio@joyoevents.com.au">Email the Brraio team</a></p>
 <p>Brraio is a study guide, not a formal or accredited course. It does not replace your training or clinical practice guidelines.</p>
 </div></footer>
 <script>
@@ -126,7 +126,7 @@ footer{background:var(--navy);color:#c9d6e4;padding:30px 0;font-size:14px}footer
     e.preventDefault();
     var d={action:"enquiry"}; new FormData(f).forEach(function(v,k){d[k]=String(v);});
     var b=f.querySelector("button"); b.disabled=true; b.textContent="Sending...";
-    function fail(t){ m.className="msg bad"; m.textContent=t||"Sorry, that didn't send. Please email admin@joyoevents.com.au instead."; b.disabled=false; b.textContent="Send message"; }
+    function fail(t){ m.className="msg bad"; m.textContent=t||"Sorry, that didn't send. Please email brraio@joyoevents.com.au instead."; b.disabled=false; b.textContent="Send message"; }
     if(!d.email||!d.message){ fail("Please add your email and a message."); return; }
     fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d)})
       .then(function(r){return r.json();})
