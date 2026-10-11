@@ -1,0 +1,204 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=540"><title>Brraio intro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:540px;height:960px;overflow:hidden;background:#0B1F33;font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased}
+#stage{position:relative;width:540px;height:960px;overflow:hidden}
+.scene{position:absolute;inset:0;opacity:0;padding:70px 44px 110px;display:flex;flex-direction:column;justify-content:center}
+.bgdark{background:radial-gradient(120% 80% at 20% 0%,#15507A 0%,#0B1F33 55%,#081626 100%)}
+.bglight{background:linear-gradient(180deg,#F4F7FA 0%,#E9F1F3 100%)}
+.bgteal{background:linear-gradient(160deg,#0B6E6A 0%,#0A4F63 60%,#13304D 100%)}
+.eyebrow{font-family:"Inter";font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:15px;color:#19D3A2}
+.dark .eyebrow{color:#19D3A2}.light .eyebrow{color:#0B6E6A}
+h1{font-family:"Inter";font-weight:800;font-size:50px;line-height:1.05;letter-spacing:-.02em;margin-top:12px}
+.dark h1,.dark p{color:#fff}.light h1{color:#13304D}.light p{color:#3E5164}
+p.sub{font-size:22px;line-height:1.4;margin-top:16px;font-weight:500}
+.card{background:#fff;border-radius:22px;box-shadow:0 18px 50px rgba(9,30,50,.18);padding:22px}
+.paper{background:#FFF5F3;border-radius:16px;overflow:hidden;position:relative}
+.opt{display:flex;align-items:center;gap:12px;border:2px solid #D9E2EA;border-radius:14px;padding:14px 16px;font-size:19px;font-weight:600;color:#13304D;margin-top:10px;background:#fff}
+.opt .l{width:30px;height:30px;border-radius:50%;background:#EEF2F6;display:grid;place-items:center;font-size:14px;color:#5B6878;flex:none}
+.opt.right{border-color:#1E8E4E;background:#E8F6EE}.opt.right .l{background:#1E8E4E;color:#fff}
+.row{display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:16px 18px;margin-top:12px;box-shadow:0 6px 18px rgba(9,30,50,.08);font-size:20px;font-weight:700;color:#13304D}
+.row .n{width:34px;height:34px;border-radius:50%;background:#E3F2F1;color:#0B6E6A;display:grid;place-items:center;font-size:16px;flex:none}
+.tag{margin-left:auto;font-size:13px;font-weight:800;color:#fff;background:#B3261E;border-radius:20px;padding:4px 10px;letter-spacing:.03em}
+.tile{border-radius:18px;padding:18px 20px;margin-top:14px;color:#fff;font-weight:700;font-size:21px;line-height:1.25}
+.tile small{display:block;font-weight:500;font-size:15px;opacity:.9;margin-top:4px}
+.big{font-family:"Inter";font-weight:800;color:#fff;font-size:120px;letter-spacing:-.04em;line-height:1}
+.pill{display:inline-block;background:#19D3A2;color:#0B1F33;font-weight:800;border-radius:40px;padding:14px 30px;font-size:24px}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{width:84px;height:84px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.brand .nm{font-family:"Inter";font-weight:800;font-size:54px;color:#fff;letter-spacing:-.02em}
+.letters{display:flex;gap:6px;margin-top:22px}
+.letters span{width:46px;height:56px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:28px;color:#fff;background:#13304D}
+.letters .r{background:#B3261E}.letters .a{background:#1385B5}
+.foot{position:absolute;left:44px;right:44px;bottom:46px;font-size:15px;color:rgba(255,255,255,.7)}
+.light .foot{color:#6B7A8C}
+#prog{position:absolute;left:0;top:0;height:5px;background:#19D3A2;z-index:9}
+</style></head><body>
+<div id="stage">
+  <div id="prog"></div>
+
+  <!-- 1: hook -->
+  <section class="scene bgdark dark" id="s1">
+    <div class="eyebrow">For paramedics, nurses and doctors</div>
+    <h1 id="s1h">Ever frozen<br>in front of a<br>12-lead?</h1>
+    <div style="margin-top:56px" class="paper"><svg id="s1svg" viewBox="0 0 452 200" width="452" height="200"></svg></div>
+    <p class="sub" id="s1p" style="margin-top:34px;font-size:26px;font-weight:700">You're not alone. Confidence comes from practice.</p>
+  </section>
+
+  <!-- 2: baseline -->
+  <section class="scene bglight light" id="s2">
+    <div class="eyebrow">Step 1</div>
+    <h1>Take your<br>ECG Baseline</h1>
+    <p class="sub">7 or 20 minutes. Find out what you really know.</p>
+    <div class="card" style="margin-top:34px">
+      <div class="paper"><svg id="s2svg" viewBox="0 0 412 120" width="412" height="120"></svg></div>
+      <div style="font-size:19px;font-weight:700;color:#13304D;margin-top:16px">What's the rhythm?</div>
+      <div class="opt" id="s2o1"><span class="l">A</span>Atrial flutter</div>
+      <div class="opt" id="s2o2"><span class="l">B</span>Sinus rhythm with first-degree block</div>
+      <div class="opt" id="s2o3"><span class="l">C</span>Mobitz I (Wenckebach)</div>
+    </div>
+  </section>
+
+  <!-- 3: plan -->
+  <section class="scene bglight light" id="s3">
+    <div class="eyebrow">Step 2</div>
+    <h1>Get a plan built<br>around your gaps</h1>
+    <p class="sub">Personalised worksheets, in the order you need them.</p>
+    <div style="margin-top:34px" id="s3rows">
+      <div class="row"><span class="n">1</span>Conduction and the waves</div>
+      <div class="row"><span class="n">2</span>The grid and intervals<span class="tag">FOCUS</span></div>
+      <div class="row"><span class="n">3</span>Heart blocks<span class="tag">FOCUS</span></div>
+      <div class="row"><span class="n">4</span>Ventricular and arrest rhythms</div>
+      <div class="row"><span class="n">5</span>12-lead and STEMI</div>
+    </div>
+  </section>
+
+  <!-- 4: learn by doing -->
+  <section class="scene bglight light" id="s4">
+    <div class="eyebrow">Step 3</div>
+    <h1>Learn by doing</h1>
+    <p class="sub">Tap the P wave. Spot the STEMI. Every answer explained.</p>
+    <div class="card" style="margin-top:34px">
+      <div class="paper"><svg id="s4svg" viewBox="0 0 412 140" width="412" height="140"></svg></div>
+      <div id="s4exp" style="margin-top:16px;border-radius:14px;background:#E8F6EE;padding:16px;font-size:18px;line-height:1.4;color:#1B4D33"><b>Correct.</b> That's the P wave: atrial depolarisation, just before the QRS.</div>
+    </div>
+  </section>
+
+  <!-- 5: weekly -->
+  <section class="scene bgteal dark" id="s5">
+    <div class="eyebrow">Every Monday</div>
+    <h1>New training<br>every week</h1>
+    <p class="sub">There's always something new to sharpen up on.</p>
+    <div style="margin-top:28px" id="s5tiles">
+      <div class="tile" style="background:#5B3FA8">Challenge Me<small>Very hard questions, mimics and traps</small></div>
+      <div class="tile" style="background:#1385B5">Case studies<small>Including the patients who turn out fine</small></div>
+      <div class="tile" style="background:#B3261E">Rhythm drill<small>15 strips a round, from AF to VT</small></div>
+      <div class="tile" style="background:#0E8A63">Weekly challenge<small>Interpret this week's ECG</small></div>
+    </div>
+  </section>
+
+  <!-- 6: CPD -->
+  <section class="scene bgdark dark" id="s6">
+    <div class="eyebrow">CPD, sorted</div>
+    <h1>Your learning hours,<br>logged for you</h1>
+    <p class="sub">Add reflections, then download certificates for your portfolio.</p>
+    <div style="margin-top:56px;text-align:center"><div class="big" id="s6n">0.0</div><div style="color:#19D3A2;font-weight:700;font-size:24px;margin-top:6px">hours this registration year</div></div>
+    <div class="card" id="s6cert" style="margin-top:44px;display:flex;align-items:center;gap:16px">
+      <div style="width:58px;height:58px;border-radius:14px;background:#E3F2F1;display:grid;place-items:center;font-size:30px"><svg width="30" height="34" viewBox="0 0 30 34"><path d="M4 2h15l7 7v23H4z" fill="#fff" stroke="#0B6E6A" stroke-width="2.4" stroke-linejoin="round"/><path d="M19 2v7h7" fill="none" stroke="#0B6E6A" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 16h12M9 21h12M9 26h8" stroke="#19D3A2" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+      <div><div style="font-weight:800;color:#13304D;font-size:20px">CPD certificate ready</div><div style="color:#5B6878;font-size:16px">Learning time, goals and reflections</div></div>
+    </div>
+  </section>
+
+  <!-- 7: on the go -->
+  <section class="scene bglight light" id="s7">
+    <div class="eyebrow">Learn on the go</div>
+    <h1>Five minutes<br>in the queue<br>counts</h1>
+    <p class="sub">On the bus, between jobs, on placement. It works like an app on your phone, even offline.</p>
+    <div style="margin-top:40px;display:flex;flex-direction:column;gap:12px" id="s7list">
+      <div class="row" style="font-weight:600"><svg width="26" height="26" viewBox="0 0 26 26" style="flex:none"><circle cx="13" cy="13" r="13" fill="#0B6E6A"/><path d="M7.5 13.5l3.5 3.5 7.5-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Doom-scroll some knowledge instead</div>
+      <div class="row" style="font-weight:600"><svg width="26" height="26" viewBox="0 0 26 26" style="flex:none"><circle cx="13" cy="13" r="13" fill="#0B6E6A"/><path d="M7.5 13.5l3.5 3.5 7.5-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>No download: add it to your home screen</div>
+      <div class="row" style="font-weight:600"><svg width="26" height="26" viewBox="0 0 26 26" style="flex:none"><circle cx="13" cy="13" r="13" fill="#0B6E6A"/><path d="M7.5 13.5l3.5 3.5 7.5-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Made by medicos, for medicos</div>
+    </div>
+  </section>
+
+  <!-- 8: CTA -->
+  <section class="scene bgteal dark" id="s8">
+    <div class="brand" style="margin-top:40px"><img src="icon-512.png" alt=""><div class="nm">Brraio</div></div>
+    <div class="letters"><span class="r">B</span><span class="r">R</span><span class="r">R</span><span class="a">A</span><span class="a">I</span><span class="a">O</span></div>
+    <p class="sub" style="font-size:20px;opacity:.9">Blood round and round. Air in and out.</p>
+    <h1 style="margin-top:56px;font-size:58px">Try it free<br>for 3 days</h1>
+    <p class="sub" style="font-size:26px;font-weight:700">Then $9.99 a month.<br>No card to start. Cancel any time.</p>
+    <div style="margin-top:40px"><span class="pill">brraio.netlify.app</span></div>
+    <div class="foot">A study guide, not an accredited course. Always follow your clinical practice guidelines.</div>
+  </section>
+</div>
+<script>
+/* ---------- ECG generator ---------- */
+function beat(x0, scale, opts){   // one PQRST, returns [x,y] points (y down = negative voltage), baseline 0
+  const o = Object.assign({p:1, pr:36, qrs:1, st:0, t:1, w:1}, opts||{}), pts = [], s = scale;
+  const g = (x,c,w,a)=>a*Math.exp(-((x-c)**2)/(2*w*w));
+  const len = 150*o.w;
+  for(let i=0;i<=len;i+=1){
+    let v = 0;
+    if(o.p) v += g(i, 18, 5, 9);
+    const q = 18+o.pr;
+    if(o.qrs){ v += g(i, q-2, 2, -8) + g(i, q+4, 2.4, 70) + g(i, q+10, 2.2, -16); v += (i>q+12 && i<q+40) ? o.st : 0; }
+    if(o.t) v += g(i, q+52, 11, 16);
+    pts.push([x0+i*s, -v*s]);
+  }
+  return pts;
+}
+function strip(w, h, beats, opts){ let x = 4, pts = [[0,0]]; const sc = (opts&&opts.scale)||1; for(let k=0;k<beats;k++){ const b = beat(x, sc, typeof opts==="function"?opts(k):opts); pts = pts.concat(b); x += 150*sc*((typeof opts==="function"?opts(k):opts)||{}).w|| 150*sc; } return pts; }
+function grid(svg, w, h){
+  let g = ""; for(let x=0;x<=w;x+=8) g += `<path d="M${x} 0V${h}" stroke="#F3C7C0" stroke-width="${x%40===0?1:.4}"/>`;
+  for(let y=0;y<=h;y+=8) g += `<path d="M0 ${y}H${w}" stroke="#F3C7C0" stroke-width="${y%40===0?1:.4}"/>`; return g;
+}
+function pathFrom(pts, base){ return "M"+pts.map(p=>p[0].toFixed(1)+" "+(base+p[1]).toFixed(1)).join(" L"); }
+function drawStrip(id, w, h, pts, base, extra){
+  const svg = document.getElementById(id);
+  svg.innerHTML = grid(svg,w,h) + (extra||"") + `<path class="tr" d="${pathFrom(pts, base)}" fill="none" stroke="#1A1A1A" stroke-width="2.2" stroke-linejoin="round"/>`;
+  const p = svg.querySelector(".tr"), L = p.getTotalLength(); p.style.strokeDasharray = L; p.dataset.len = L; return p;
+}
+// scene strips
+const s1 = drawStrip("s1svg", 452, 200, (()=>{ let pts=[], x=0; for(let k=0;k<4;k++){ pts = pts.concat(beat(x, 0.75, {st: k>=2?9:0})); x += 115; } return pts; })(), 140);
+const s2 = drawStrip("s2svg", 412, 120, (()=>{ let pts=[], x=0; for(let k=0;k<4;k++){ pts = pts.concat(beat(x, 0.62, {pr:62})); x += 105; } return pts; })(), 92);
+const s4 = drawStrip("s4svg", 412, 140, (()=>{ let pts=[], x=0; for(let k=0;k<4;k++){ pts = pts.concat(beat(x, 0.7)); x += 105; } return pts; })(), 106,
+  `<rect id="s4hl" x="4" y="0" width="16" height="140" fill="#1E8E4E" opacity="0"/><circle id="s4tap" cx="12.6" cy="100" r="10" fill="none" stroke="#0B6E6A" stroke-width="3" opacity="0"/>`);
+
+/* ---------- timeline ---------- */
+const SC = [["s1",0,5],["s2",5,10.5],["s3",10.5,15.5],["s4",15.5,21],["s5",21,26.5],["s6",26.5,31.5],["s7",31.5,36.5],["s8",36.5,43]];
+const DUR = 43;
+const clamp = (v,a=0,b=1)=>Math.max(a,Math.min(b,v)), ease = x=>1-Math.pow(1-clamp(x),3), io = x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;};
+function fadeUp(el, t, start, d=.5){ const k = ease((t-start)/d); el.style.opacity = k; el.style.transform = `translateY(${(1-k)*24}px)`; }
+function render(t){
+  document.getElementById("prog").style.width = (t/DUR*100)+"%";
+  for(const [id,a,b] of SC){
+    const el = document.getElementById(id), local = t-a;
+    const vis = t>=a-.01 && t<b+.35;
+    el.style.opacity = !vis ? 0 : t<a+.35 ? ease((t-a)/.35) : t>b ? 1-ease((t-b)/.35) : 1;
+    el.style.zIndex = t<b ? 2 : 1;
+    if(!vis) continue;
+    el.style.transform = `scale(${1.03-0.03*ease(local/.8)})`;
+    [...el.children].forEach((c,i)=>{ if(c.id!=="prog") fadeUp(c, local, .1+i*.18); });
+  }
+  // scene specifics
+  const L1 = +s1.dataset.len; s1.style.strokeDashoffset = L1*(1-io((t-0.6)/2.8));
+  const L2 = +s2.dataset.len; s2.style.strokeDashoffset = L2*(1-io((t-5.6)/1.6));
+  const right = t>8.4; document.getElementById("s2o2").className = "opt"+(right?" right":"");
+  document.getElementById("s2o2").style.transform = `scale(${right? 1+0.04*Math.sin(clamp((t-8.4)/.4)*Math.PI):1})`;
+  document.querySelectorAll("#s3rows .row").forEach((r,i)=>{ const k = ease((t-11.3-i*.35)/.5); r.style.opacity = k; r.style.transform = `translateX(${(1-k)*-40}px)`; });
+  const L4 = +s4.dataset.len; s4.style.strokeDashoffset = L4*(1-io((t-16.1)/1.4));
+  const tp = clamp((t-18)/.6); const tap = document.getElementById("s4tap"); tap.setAttribute("opacity", t>18 && t<19 ? 1-tp : 0); tap.setAttribute("r", 6+tp*18);
+  document.getElementById("s4hl").setAttribute("opacity", t>18.2 ? .22 : 0);
+  fadeUp(document.getElementById("s4exp"), t, 18.4);
+  document.querySelectorAll("#s5tiles .tile").forEach((r,i)=>{ const k = ease((t-21.9-i*.45)/.5); r.style.opacity = k; r.style.transform = `translateY(${(1-k)*30}px) scale(${.96+.04*k})`; });
+  document.getElementById("s6n").textContent = (12.5*io((t-27.3)/2.2)).toFixed(1);
+  fadeUp(document.getElementById("s6cert"), t, 29.6);
+  document.querySelectorAll("#s7list .row").forEach((r,i)=>{ fadeUp(r, t, 33+i*.4); });
+}
+render(0);
+const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(still){ render(40); } else { let t0 = null; const loop = ts => { if(t0===null) t0 = ts; render(((ts - t0)/1000) % DUR); requestAnimationFrame(loop); }; requestAnimationFrame(loop); }
+</script>
+</body></html>
