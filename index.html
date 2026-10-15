@@ -34,7 +34,7 @@
 {"@type":"Question","name":"What is Brraio?","acceptedAnswer":{"@type":"Answer","text":"Brraio is an ECG practice app for medical staff. It starts with a short ECG Baseline, builds a personalised learning plan around your gaps, and adds new questions, case studies and a weekly challenge every Monday."}},
 {"@type":"Question","name":"Who is Brraio for?","acceptedAnswer":{"@type":"Answer","text":"Paramedics, nurses, doctors, students, EMTs, volunteers and first responders. Beginners get an Essentials plan, and experienced clinicians can push themselves with Challenge Me."}},
 {"@type":"Question","name":"Does Brraio count towards CPD?","acceptedAnswer":{"@type":"Answer","text":"Brraio logs your learning time and reflections and gives you certificates for your portfolio. It is a self-directed study resource, not an accredited course, so you decide what counts towards your Board's CPD standard."}},
-{"@type":"Question","name":"How much does Brraio cost?","acceptedAnswer":{"@type":"Answer","text":"It's free for 3 days with no card needed, then $9.99 AUD a month, or $100 AUD a year. Cancel any time."}},
+{"@type":"Question","name":"How much does Brraio cost?","acceptedAnswer":{"@type":"Answer","text":"It's free for 3 days with no card needed, then $9.99 AUD a month, or $100 AUD a year. Cancel any time. Join during your trial and your first week as a member is free."}},
 {"@type":"Question","name":"Do I need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Brraio works in your phone's browser, and you can add it to your home screen so it works like an app, even offline."}}]}]}</script>
 <style>
 :root{
@@ -102,10 +102,10 @@ h2{font:800 clamp(30px,4.6vw,52px)/1.06 var(--head);letter-spacing:-.03em;color:
 @media (max-width:900px){.try .wrap{grid-template-columns:1fr;gap:32px}}
 .ecgcard{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 70px rgba(19,48,77,.14)}
 .paper{background-color:var(--paper);border-bottom:1px solid var(--gmajor);
-  background-image:linear-gradient(var(--gminor) 1px,transparent 1px),linear-gradient(90deg,var(--gminor) 1px,transparent 1px),linear-gradient(var(--gmajor) 1px,transparent 1px),linear-gradient(90deg,var(--gmajor) 1px,transparent 1px);
-  background-size:12px 12px,12px 12px,60px 60px,60px 60px;background-position:-1px -1px}
+}
 .paper svg{display:block;width:100%;height:auto}
 .paper path{fill:none;stroke:#111;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round}
+.paper path.g1{stroke:var(--gminor);stroke-width:.6}.paper path.g2{stroke:var(--gmajor);stroke-width:1.1}
 .q{padding:22px 24px 26px}
 .q h3{font:700 20px/1.3 var(--head);color:var(--navy);margin:0 0 14px}
 .opts{display:grid;gap:10px}
@@ -247,7 +247,7 @@ footer a{color:#fff}
     <p class="sub">Here's the kind of strip you'll practise on. Read it, pick your answer, and see how you go.</p>
   </div>
   <div class="ecgcard">
-    <div class="paper"><svg id="strip" viewBox="0 0 640 140" role="img" aria-label="A rhythm strip with an irregular rhythm, no clear P waves and a wobbly baseline"><path id="stripPath" d=""/></svg></div>
+    <div class="paper"><svg id="strip" viewBox="0 0 640 140" role="img" aria-label="A rhythm strip with an irregular rhythm, no clear P waves and a wobbly baseline"><path class="g1" id="gridMin" d=""/><path class="g2" id="gridMaj" d=""/><path id="stripPath" d=""/></svg></div>
     <div class="q">
       <h3>What's the rhythm?</h3>
       <div class="opts" id="opts">
@@ -311,7 +311,7 @@ footer a{color:#fff}
   <details><summary>What is Brraio?</summary><p>Brraio is an ECG practice app for medical staff. It starts with a short ECG Baseline, builds a personalised learning plan around your gaps, and adds new questions, case studies and a weekly challenge every Monday.</p></details>
   <details><summary>Who is Brraio for?</summary><p>Paramedics, nurses, doctors, students, EMTs, volunteers and first responders. Beginners get an Essentials plan, and experienced clinicians can push themselves with Challenge Me.</p></details>
   <details><summary>Does Brraio count towards CPD?</summary><p>Brraio logs your learning time and reflections and gives you certificates for your portfolio. It is a self-directed study resource, not an accredited course, so you decide what counts towards your Board's CPD standard.</p></details>
-  <details><summary>How much does it cost?</summary><p>It's free for 3 days with no card needed, then $9.99 AUD a month, or $100 AUD a year. Cancel any time. Join during your trial and your first week as a member is free.</p></details>
+  <details><summary>How much does Brraio cost?</summary><p>It's free for 3 days with no card needed, then $9.99 AUD a month, or $100 AUD a year. Cancel any time. Join during your trial and your first week as a member is free.</p></details>
   <details><summary>Do I need to download an app?</summary><p>No. Brraio works in your phone's browser, and you can add it to your home screen so it works like an app, even offline.</p></details>
   <details><summary>Is my information safe?</summary><p>We only ask for your first name and email, to run your account, send your code and certificates, and (if you choose) send news. We never sell or share your details. Ask us to delete your account any time using the contact form.</p></details>
 </div></section>
@@ -393,10 +393,13 @@ footer a{color:#fff}
 
   /* ---------- try-one strip: atrial fibrillation ---------- */
   var sp=document.getElementById("stripPath"); if(sp){
-    var beats=[30,88,124,194,234,304,340,420,458,528,566,612],base=84,d="";
+    var beats=[28,96,148,222,270,342,410,452,530,590],base=84,d="";
+    /* grid drawn in viewBox units so the scale is right at any width: 1 small box = 5 units = 0.04 s */
+    var gm="",gM="";for(var gx=0;gx<=640;gx+=5){(gx%25?(gm+="M"+gx+" 0V140"):(gM+="M"+gx+" 0V140"));}for(var gy=0;gy<=140;gy+=5){(gy%25?(gm+="M0 "+gy+"H640"):(gM+="M0 "+gy+"H640"));}
+    document.getElementById("gridMin").setAttribute("d",gm);document.getElementById("gridMaj").setAttribute("d",gM);
     var g=function(x,c,w,a){return a*Math.exp(-((x-c)*(x-c))/(2*w*w));};
     for(var x=0;x<=640;x+=1.5){
-      var v=3.4*Math.sin(x*.55)+2.6*Math.sin(x*.93+1.3)+1.9*Math.sin(x*1.7+.4);
+      var v=3.4*Math.sin(x*.4)+2.6*Math.sin(x*.33+1.3)+1.9*Math.sin(x*.5+.4);
       for(var i=0;i<beats.length;i++){var b=beats[i];v+=g(x,b-4,1.5,-8)+g(x,b,2.3,56)+g(x,b+4.5,2,-14)+g(x,b+34,7,8);}
       d+=(x?"L":"M")+x.toFixed(1)+" "+(base-v).toFixed(1)+" ";
     }
