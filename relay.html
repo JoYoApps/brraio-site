@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><title>Brraio upload relay</title><meta name="robots" content="noindex">
+<body style="font:14px sans-serif;padding:20px">Preparing files…
+<script>
+(async function(){
+  const q = new URLSearchParams(location.search), srcs = (q.get('f')||'').split(',').filter(Boolean);
+  const out = [];
+  for(const s of srcs){ if(!/^media\/[\w\-\/.]+$/.test(s)) continue; const r = await fetch(s); const b = await r.arrayBuffer(); out.push({name:s.split('/').pop(), type:r.headers.get('content-type')||'application/octet-stream', buf:b}); }
+  const msg = {brraioRelay:1, files:out};
+  try{ if(window.opener){ window.opener.postMessage(msg, '*'); document.body.textContent = 'Sent ' + out.length + ' file(s). You can close this tab.'; setTimeout(()=>window.close(), 800); return; } }catch(e){}
+  document.body.textContent = 'No opener window (' + out.length + ' files ready).';
+})();
+</script>
