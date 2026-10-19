@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>Brraio copy</title><meta name="robots" content="noindex">
+<body style="font:16px sans-serif;padding:20px"><button id="c" style="font-size:22px;padding:20px">Copy image</button><p id="m"></p>
+<script>
+document.getElementById('c').onclick = async ()=>{
+  const m = document.getElementById('m');
+  try{
+    const f = new URLSearchParams(location.search).get('f')||''; if(!/^media\/[\w\-\/.]+$/.test(f)) throw new Error('bad path');
+    const b = await (await fetch(f)).blob();
+    let png = b;
+    if(b.type !== 'image/png'){ const bmp = await createImageBitmap(b); const cv = document.createElement('canvas'); cv.width = bmp.width; cv.height = bmp.height; cv.getContext('2d').drawImage(bmp,0,0); png = await new Promise(r=>cv.toBlob(r,'image/png')); }
+    await navigator.clipboard.write([new ClipboardItem({'image/png': png})]);
+    m.textContent = 'COPIED ' + png.size;
+  }catch(e){ m.textContent = 'ERROR ' + e.message; }
+};
+</script>
