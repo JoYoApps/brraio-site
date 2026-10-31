@@ -4,7 +4,7 @@
 (async function(){
   const q = new URLSearchParams(location.search), srcs = (q.get('f')||'').split(',').filter(Boolean);
   const out = [];
-  for(const s of srcs){ if(!/^media\/[\w\-\/.]+$/.test(s)) continue; const r = await fetch(s); const b = await r.arrayBuffer(); out.push({name:s.split('/').pop(), type:r.headers.get('content-type')||'application/octet-stream', buf:b}); }
+  for(const s of srcs){ if(!/^(media|social)\/[\w\-\/.]+$/.test(s)) continue; const r = await fetch(s); const b = await r.arrayBuffer(); out.push({name:s.split('/').pop(), type:r.headers.get('content-type')||'application/octet-stream', buf:b}); }
   const msg = {brraioRelay:1, files:out};
   try{ if(window.parent && window.parent!==window){ window.parent.postMessage(msg, '*'); document.body.textContent='Sent to parent'; return; } }catch(e){}
   try{ if(window.opener){ window.opener.postMessage(msg, '*'); document.body.textContent = 'Sent ' + out.length + ' file(s). You can close this tab.'; setTimeout(()=>window.close(), 800); return; } }catch(e){}

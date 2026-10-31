@@ -4,7 +4,7 @@
 document.getElementById('c').onclick = async ()=>{
   const m = document.getElementById('m');
   try{
-    const f = new URLSearchParams(location.search).get('f')||''; if(!/^media\/[\w\-\/.]+$/.test(f)) throw new Error('bad path');
+    const f = new URLSearchParams(location.search).get('f')||''; if(!/^(media|social)\/[\w\-\/.]+$/.test(f)) throw new Error('bad path');
     const b = await (await fetch(f)).blob();
     let png = b;
     if(b.type !== 'image/png'){ const bmp = await createImageBitmap(b); const cv = document.createElement('canvas'); cv.width = bmp.width; cv.height = bmp.height; cv.getContext('2d').drawImage(bmp,0,0); png = await new Promise(r=>cv.toBlob(r,'image/png')); }
