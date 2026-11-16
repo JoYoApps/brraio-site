@@ -2,6 +2,7 @@
    - SUPPORTERS: every brand backing Brraio. Logos go in partners/logos/.
    - SPONSORS: the prize sponsor for each month (YYYY-MM, Perth time). To swap the
      monthly sponsor, add a line for the new month. The id must match a supporter.
+     The monthly comp is a game of skill (best-judged ECG Challenge entries win), never a random draw.
    The same lists live in the app (SUPPORTERS and PRIZE_SPONSORS in index.html). */
 window.BRRAIO_PARTNERS = {
   supporters: [
@@ -10,8 +11,8 @@ window.BRRAIO_PARTNERS = {
      deal: "Mystery compression socks for Brraio competition winners, starting December"}
   ],
   sponsors: {
-    "2026-12": {id: "nurse-life", prize: "25 mystery compression socks",
-                detail: "Winners get an exclusive code to claim their socks at Nurse Life checkout."}
+    "2026-12": {id: "nurse-life", prize: "25 pairs of mystery compression socks",
+                detail: "A game of skill: the 25 best weekly ECG Challenge interpretations in December win, judged by the Brraio team. Free to enter. Winners get an exclusive code to claim their socks at Nurse Life checkout."}
   }
 };
 
@@ -35,7 +36,7 @@ window.BRRAIO_PARTNERS = {
         '<a class="btn" href="' + base + 'partners/join/">Become a prize sponsor</a></div>'; return; }
       el.innerHTML = '<div class="spon">' + logo(sp.w, base, "slogo") + '<div><span class="eyebrow">' + (sp.now ? "This month's prize sponsor · " : "Coming up · ") + esc(sp.label) + '</span>' +
         '<h3>' + esc(sp.w.name) + '</h3><p class="prize">' + esc(sp.s.prize) + (sp.now ? "" : ", from " + esc(sp.month)) + '</p><p>' + esc(sp.s.detail || "") + '</p>' +
-        '<p class="acts"><a class="btn" href="' + APP + '">Play in the Brraio app</a>' + (sp.w.url ? ' <a class="btn ghost2" href="' + esc(sp.w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(sp.w.name) + '</a>' : "") + '</p></div></div>';
+        '<p class="acts"><a class="btn" href="' + APP + '">Enter in the Brraio app</a>' + (sp.w.url ? ' <a class="btn ghost2" href="' + esc(sp.w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(sp.w.name) + '</a>' : "") + '</p></div></div>';
     },
     supporters: function(el, base){
       el.innerHTML = D.supporters.map(function(w){
