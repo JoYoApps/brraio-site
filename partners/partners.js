@@ -11,8 +11,8 @@ window.BRRAIO_PARTNERS = {
      deal: "Mystery compression socks for Brraio competition winners, starting December"}
   ],
   sponsors: {
-    "2026-12": {id: "nurse-life", prize: "25 pairs of mystery compression socks",
-                detail: "A game of skill: the 25 best weekly ECG Challenge interpretations in December win, judged by the Brraio team. Free to enter. Winners get an exclusive code to claim their socks at Nurse Life checkout."}
+    "2026-12": {id: "nurse-life", prize: "Mystery compression socks",
+                detail: "A game of skill: the top-scoring weekly ECG Challenge interpretations in December win, judged by the Brraio team. Free to enter. Winners get an exclusive code to claim their socks at Nurse Life checkout."}
   }
 };
 
