@@ -6,7 +6,8 @@
    The same lists live in the app (SUPPORTERS and PRIZE_SPONSORS in index.html). */
 window.BRRAIO_PARTNERS = {
   supporters: [
-    {id: "nurse-life", name: "Nurse Life", logo: "nurse-life.png", url: "",
+    {id: "nurse-life", name: "Nurse Life", logo: "nurse-life.png", url: "https://www.instagram.com/nurselifeaustralia/",
+     socials: {Instagram: "https://www.instagram.com/nurselifeaustralia/", Facebook: "https://www.facebook.com/nurselifeaustralia", TikTok: "https://www.tiktok.com/@nurselifeausofficial"},
      blurb: "Nurse Life is backing Brraio's monthly competitions with mystery compression socks.",
      deal: "Mystery compression socks for Brraio competition winners, starting December"}
   ],
@@ -29,19 +30,20 @@ window.BRRAIO_PARTNERS = {
     return pick(key(y, m), y, m, true) || pick(key(ny, nm), ny, nm, false) || {none: true, month: MONTHS[m-1]};
   }
   function logo(w, base, cls){ return w.logo ? '<img class="' + cls + '" src="' + esc(base + "partners/logos/" + w.logo) + '" alt="' + esc(w.name) + '" loading="lazy">' : ""; }
+  function socials(w){ var k = w.socials ? Object.keys(w.socials) : []; return k.length ? '<p class="socl">Follow: ' + k.map(function(n){ return '<a href="' + esc(w.socials[n]) + '" target="_blank" rel="noopener">' + esc(n) + '</a>'; }).join(" · ") + '</p>' : ""; }
   var R = {
     sponsor: function(el, base){
       var sp = sponsor();
       if (sp.none) { el.innerHTML = '<div class="spon none"><div><span class="eyebrow">Prize sponsor wanted</span><h3>Sponsor ' + esc(sp.month) + "'s prize</h3><p>Put your brand in front of medicos who are putting in the work. Your prize, your name on it.</p></div>" +
         '<a class="btn" href="' + base + 'partners/join/">Become a prize sponsor</a></div>'; return; }
       el.innerHTML = '<div class="spon">' + logo(sp.w, base, "slogo") + '<div><span class="eyebrow">' + (sp.now ? "This month's prize sponsor · " : "Coming up · ") + esc(sp.label) + '</span>' +
-        '<h3>' + esc(sp.w.name) + '</h3><p class="prize">' + esc(sp.s.prize) + (sp.now ? "" : ", from " + esc(sp.month)) + '</p><p>' + esc(sp.s.detail || "") + '</p>' +
+        '<h3>' + esc(sp.w.name) + '</h3><p class="prize">' + esc(sp.s.prize) + (sp.now ? "" : ", from " + esc(sp.month)) + '</p><p>' + esc(sp.s.detail || "") + '</p>' + socials(sp.w) +
         '<p class="acts"><a class="btn" href="' + APP + '">Enter in the Brraio app</a>' + (sp.w.url ? ' <a class="btn ghost2" href="' + esc(sp.w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(sp.w.name) + '</a>' : "") + '</p></div></div>';
     },
     supporters: function(el, base){
       el.innerHTML = D.supporters.map(function(w){
         return '<li class="pcard">' + logo(w, base, "plogo") + '<h3>' + esc(w.name) + '</h3><p>' + esc(w.blurb || "") + '</p>' + (w.deal ? '<p class="deal">' + esc(w.deal) + '</p>' : "") +
-          (w.url ? '<a class="btn" href="' + esc(w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(w.name) + '</a>' : "") + '</li>';
+          (w.url ? '<a class="btn" href="' + esc(w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(w.name) + '</a>' : "") + socials(w) + '</li>';
       }).join("") + '<li class="pcard more"><h3>Your brand here</h3><p>Got a deal, a prize or a giveaway for health workers? We\'d love to hear from you.</p><a class="btn" href="' + base + 'partners/join/">Become a supporter</a></li>';
     },
     logos: function(el, base){
