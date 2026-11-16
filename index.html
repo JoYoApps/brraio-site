@@ -191,6 +191,14 @@ h2{font:800 clamp(30px,4.6vw,52px)/1.06 var(--head);letter-spacing:-.03em;color:
 
 /* teams */
 .teams{background:var(--bg);padding:56px 0}
+.partners{background:#fff;padding:40px 0}
+.partners .wrap{display:flex;align-items:center;justify-content:center;gap:22px 34px;flex-wrap:wrap;text-align:center}
+.partners .lbl{font:700 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.partners .logos{display:flex;gap:18px;align-items:center}
+.partners .logos a{display:block;border-radius:14px;padding:4px;transition:transform .15s ease}
+.partners .logos a:hover{transform:translateY(-2px)}
+.partners .logos img{display:block;height:84px;width:auto}
+.partners .more{font-weight:600;color:var(--teal)}
 .teams .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
 .teams h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 8px}
 .teams p{margin:0;color:var(--muted);max-width:34em}
@@ -337,6 +345,12 @@ footer a{color:#fff}
 <section class="teams"><div class="wrap">
   <div><h2>Training a whole crew or cohort?</h2><p>Group pricing for stations, services and universities. Tell us how many people and we'll send a quote.</p></div>
   <a class="btn dark" href="#contact">Ask for a quote</a>
+</div></section>
+
+<section class="partners" aria-label="Our partners"><div class="wrap">
+  <span class="lbl">Proudly supported by</span>
+  <div class="logos"><a href="partners/" title="Nurse Life"><img src="partners/logos/nurse-life.png" alt="Nurse Life" width="85" height="84" loading="lazy"></a></div>
+  <a class="more" href="partners/">See partner deals</a>
 </div></section>
 
 <section class="faq" id="faq"><div class="wrap">

@@ -36,6 +36,8 @@ main.pp{padding:0}
 .pgrid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .pcard{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;display:flex;flex-direction:column;gap:8px}
 .pcard img{height:44px;width:auto;object-fit:contain;align-self:flex-start}
+.pcard .plogo{height:120px}
+.pcard.more{border:2px dashed #C9D6E2;background:var(--bg);justify-content:center}
 .pcard h3{font:700 1.15rem/1.3 Poppins,sans-serif;color:var(--navy);margin:4px 0 0}
 .pcard p{margin:0;font-size:16px;color:var(--muted)}
 .pcard .deal{background:#E7FBF4;color:var(--teal);font-weight:700;font-size:15px;border-radius:12px;padding:10px 12px}
@@ -66,9 +68,9 @@ main.pp{padding:0}
 
 <section class="sec" aria-labelledby="dealsH"><div class="w wide">
 <h2 id="dealsH">Deals for Brraio users</h2>
-<p class="sub">Partner offers will show here. Follow us on socials to hear about them first.</p>
+<p class="sub">Our partners, and what they're offering Brraio users. Follow us on socials to hear about new deals first.</p>
 <!--
-  PARTNER CARDS: when a partner is confirmed, delete the .empty block below and add one <li> per partner inside a <ul class="pgrid">:
+  PARTNER CARDS: when a partner is confirmed, add one <li class="pcard"> per partner to the list below, before the 'Your business here' card:
   <ul class="pgrid">
     <li class="pcard">
       <img src="logos/partner-name.png" alt="Partner name" width="160" height="44">
@@ -79,11 +81,20 @@ main.pp{padding:0}
     </li>
   </ul>
 -->
-<div class="empty">
-  <div class="ic"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#5B3FA8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
-  <h3>First partners coming soon</h3>
-  <p>We're lining up deals and prizes from businesses that support medical staff. Check back soon, or keep an eye on the app.</p>
-</div>
+<ul class="pgrid">
+  <li class="pcard">
+    <img class="plogo" src="logos/nurse-life.png" alt="Nurse Life: The Best Life" width="120" height="118">
+    <h3>Nurse Life</h3>
+    <p>Nurse Life is backing Brraio's monthly competitions with mystery compression socks.</p>
+    <p class="deal">25 mystery compression sock prizes for Brraio competition winners, starting December</p>
+    <p>Winners claim their socks with an exclusive code at Nurse Life checkout.</p>
+  </li>
+  <li class="pcard more">
+    <h3>Your business here</h3>
+    <p>Got a deal, a prize or a giveaway for medical staff? We'd love to hear from you.</p>
+    <a class="btn" href="../#contact">Partner with us</a>
+  </li>
+</ul>
 </div></section>
 
 <section class="sec" aria-labelledby="waysH"><div class="w wide">
