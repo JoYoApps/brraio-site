@@ -1,0 +1,24 @@
+/* Shared styles for the supporters blocks (home page + partners page). Scoped to .bs */
+.bs .eyebrow{display:inline-block;font:700 12px/1.3 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C2357A;margin:0 0 6px}
+.bs .btn{display:inline-block;background:#19D3A2;color:#071522;font:700 16px/1 Inter,sans-serif;text-decoration:none;padding:13px 22px;border-radius:999px;margin:4px 6px 4px 0;border:2px solid transparent;box-shadow:none}
+.bs .btn.ghost2{background:transparent;color:#13304D;border-color:#13304D}
+.bs .spon{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;border-radius:24px;padding:26px;background:linear-gradient(135deg,#FFF3F9,#FFF7EA);border:1px solid #F1C6DE;box-shadow:0 14px 36px rgba(194,53,122,.10)}
+.bs .spon .slogo{width:150px;height:150px;object-fit:contain;background:#fff;border-radius:20px;padding:10px;border:1px solid #F1D9E7}
+.bs .spon h3{font:800 1.7rem/1.15 Poppins,sans-serif;color:#13304D;margin:0 0 4px}
+.bs .spon .prize{font:700 1.15rem/1.35 Poppins,sans-serif;color:#C2357A;margin:0 0 6px}
+.bs .spon p{margin:0 0 6px;color:#566475;font-size:16px;line-height:1.55}
+.bs .spon .acts{margin:10px 0 0}
+.bs .spon.none{grid-template-columns:1fr auto;background:#F3F6F9;border:2px dashed #C9D6E2;box-shadow:none}
+@media(max-width:620px){.bs .spon{grid-template-columns:1fr;text-align:left}.bs .spon .slogo{width:110px;height:110px}.bs .spon.none{grid-template-columns:1fr}}
+.bs .pgrid{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.bs .pcard{border:1px solid #DDE4EB;border-radius:18px;padding:20px;background:#fff;display:flex;flex-direction:column;gap:8px}
+.bs .pcard .plogo{height:110px;width:auto;object-fit:contain;align-self:flex-start}
+.bs .pcard h3{font:700 1.15rem/1.3 Poppins,sans-serif;color:#13304D;margin:4px 0 0}
+.bs .pcard p{margin:0;font-size:16px;line-height:1.55;color:#566475}
+.bs .pcard .deal{background:#E7FBF4;color:#0B6E6A;font-weight:700;font-size:15px;border-radius:12px;padding:10px 12px}
+.bs .pcard .btn{align-self:flex-start;margin-top:auto}
+.bs .pcard.more{border:2px dashed #C9D6E2;background:#F3F6F9;justify-content:center}
+.bs .logos{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.bs .logos a{display:block;background:#fff;border:1px solid #DDE4EB;border-radius:16px;padding:8px;transition:transform .15s ease}
+.bs .logos a:hover{transform:translateY(-2px)}
+.bs .logos img{display:block;height:72px;width:auto}

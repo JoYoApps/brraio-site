@@ -25,6 +25,7 @@
 <meta property="og:url" content="https://joyoapps.github.io/brraio-site/"><meta property="og:image" content="https://joyoapps.github.io/brraio-site/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Brraio: get confident reading ECGs. Free to use.">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Brraio: ECG practice for paramedics, nurses and doctors"><meta name="twitter:description" content="Quick ECG practice with explained answers, a plan built around your gaps and CPD logged for you. Free to use."><meta name="twitter:image" content="https://joyoapps.github.io/brraio-site/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="partners/partners.css"><script src="partners/partners.js" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://joyoapps.github.io/brraio-site/#org","name":"Brraio","legalName":"JoYo Group Pty Ltd","url":"https://joyoapps.github.io/brraio-site/","logo":{"@type":"ImageObject","url":"https://joyoapps.github.io/brraio-site/icon-192.png","width":192,"height":192},"slogan":"Made by medicos, for medicos.","sameAs":["https://www.facebook.com/profile.php?id=61595614130427","https://www.instagram.com/brraio.ecg/","https://www.linkedin.com/company/brraio/","https://www.youtube.com/@brraioecg"]},
@@ -191,14 +192,11 @@ h2{font:800 clamp(30px,4.6vw,52px)/1.06 var(--head);letter-spacing:-.03em;color:
 
 /* teams */
 .teams{background:var(--bg);padding:56px 0}
-.partners{background:#fff;padding:40px 0}
-.partners .wrap{display:flex;align-items:center;justify-content:center;gap:22px 34px;flex-wrap:wrap;text-align:center}
-.partners .lbl{font:700 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.partners .logos{display:flex;gap:18px;align-items:center}
-.partners .logos a{display:block;border-radius:14px;padding:4px;transition:transform .15s ease}
-.partners .logos a:hover{transform:translateY(-2px)}
-.partners .logos img{display:block;height:84px;width:auto}
-.partners .more{font-weight:600;color:var(--teal)}
+.partners{background:#fff;padding:64px 0}
+.partners .sub{color:var(--muted);margin:0 0 26px}
+.pgrid2{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:center}
+.pgrid2 .side p{margin:14px 0 0}
+@media (max-width:900px){.pgrid2{grid-template-columns:1fr}}
 .teams .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
 .teams h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 8px}
 .teams p{margin:0;color:var(--muted);max-width:34em}
@@ -250,7 +248,7 @@ footer a{color:#fff}
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav"><div class="wrap">
   <a href="#top" aria-label="Brraio home"><img src="logo-horizontal-white.png" alt="Brraio" width="143" height="38"></a>
-  <nav class="links"><a href="#try">Try one</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="partners/">Partners</a><a href="blog/">Blog</a><a class="pill" href="https://brraio.netlify.app/">Open Brraio</a></nav>
+  <nav class="links"><a href="#try">Try one</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="partners/">Supporters</a><a href="blog/">Blog</a><a class="pill" href="https://brraio.netlify.app/">Open Brraio</a></nav>
 </div></header>
 
 <div class="hero" id="top">
@@ -347,10 +345,14 @@ footer a{color:#fff}
   <a class="btn dark" href="#contact">Ask for a quote</a>
 </div></section>
 
-<section class="partners" aria-label="Our partners"><div class="wrap">
-  <span class="lbl">Proudly supported by</span>
-  <div class="logos"><a href="partners/" title="Nurse Life"><img src="partners/logos/nurse-life.png" alt="Nurse Life" width="85" height="84" loading="lazy"></a></div>
-  <a class="more" href="partners/">See partner deals</a>
+<section class="partners bs" id="supporters" aria-labelledby="supH"><div class="wrap">
+  <h2 id="supH">Brands that support our health workers</h2>
+  <p class="sub">They put up our monthly prizes and deals, and help keep Brraio free to use.</p>
+  <div class="pgrid2">
+    <div data-brraio="sponsor" data-base=""></div>
+    <div class="side"><span class="eyebrow" style="color:var(--muted)">Our supporters</span><div class="logos" data-brraio="logos" data-base=""></div>
+      <p><a class="btn" href="partners/">See all supporters</a> <a class="btn ghost2" href="partners/join/">Become a supporter</a></p></div>
+  </div>
 </div></section>
 
 <section class="faq" id="faq"><div class="wrap">
@@ -407,7 +409,7 @@ footer a{color:#fff}
     <div><h4>Disclaimer</h4><p>Brraio is a study guide, not a formal or accredited course. It does not replace your training, your service's clinical practice guidelines or professional judgement. Scenarios are fictional.</p></div>
     <div><h4>Privacy</h4><p>We collect only what we need to run your account: your first name, email and learning progress. We never sell or share your details, and payments are handled securely by Stripe. Ask us to delete your data any time via the contact form.</p></div>
   </div>
-  <p class="legal">© 2026 JoYo Group Pty Ltd. <a href="partners/">Partners and deals</a> · <a href="https://brraio.netlify.app/">Open Brraio</a></p>
+  <p class="legal">© 2026 JoYo Group Pty Ltd. <a href="partners/">Supporters</a> · <a href="partners/join/">Become a supporter</a> · <a href="https://brraio.netlify.app/">Open Brraio</a></p>
 </div></footer>
 
 <script>
