@@ -22,3 +22,4 @@
 .bs .logos a{display:block;background:#fff;border:1px solid #DDE4EB;border-radius:16px;padding:8px;transition:transform .15s ease}
 .bs .logos a:hover{transform:translateY(-2px)}
 .bs .logos img{display:block;height:72px;width:auto}
+.bs .socl{font-size:15px;margin:0}.bs .socl a{color:#0B6E6A;font-weight:600}
