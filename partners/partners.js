@@ -40,6 +40,17 @@ window.BRRAIO_PARTNERS = {
         '<h3>' + esc(sp.w.name) + '</h3><p class="prize">' + esc(sp.s.prize) + (sp.now ? "" : ", from " + esc(sp.month)) + '</p><p>' + esc(sp.s.detail || "") + '</p>' + socials(sp.w) +
         '<p class="acts"><a class="btn" href="' + APP + '">Enter in the Brraio app</a>' + (sp.w.url ? ' <a class="btn ghost2" href="' + esc(sp.w.url) + '" target="_blank" rel="noopener sponsored">Visit ' + esc(sp.w.name) + '</a>' : "") + '</p></div></div>';
     },
+    banner: function(el, base){
+      var sp = sponsor();
+      if (sp.none) { el.innerHTML = ""; return; }
+      el.innerHTML = '<aside class="compbar" aria-label="Free entry prize competition"><div class="cb-in">' +
+        (sp.w.logo ? '<img class="cb-logo" src="' + esc(base + "partners/logos/" + sp.w.logo) + '" alt="' + esc(sp.w.name) + '">' : "") +
+        '<div class="cb-txt"><span class="cb-tag">Free entry prize competition' + (sp.now ? "" : " · opens 1 " + esc(sp.month)) + '</span>' +
+        '<strong>' + esc(sp.month) + ': win ' + esc(sp.s.prize.charAt(0).toLowerCase() + sp.s.prize.slice(1)) + ' from ' + esc(sp.w.name) + '</strong>' +
+        '<span class="cb-how">Do the weekly ECG Challenge. The best interpretations win. New prize every month.</span></div>' +
+        '<div class="cb-acts"><a class="cb-go" href="' + APP + '">' + (sp.now ? "Enter free" : "Join free now") + '</a><a class="cb-more" href="' + base + '#supporters">How it works</a></div>' +
+        '</div></aside>';
+    },
     supporters: function(el, base){
       el.innerHTML = D.supporters.map(function(w){
         return '<li class="pcard">' + logo(w, base, "plogo") + '<h3>' + esc(w.name) + '</h3><p>' + esc(w.blurb || "") + '</p>' + (w.deal ? '<p class="deal">' + esc(w.deal) + '</p>' : "") +
