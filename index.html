@@ -69,7 +69,7 @@ a{color:var(--teal)}
 .hero:before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(25,211,162,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(25,211,162,.06) 1px,transparent 1px);
   background-size:24px 24px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:112px;padding-bottom:40px}
+.hero>.wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-top:112px;padding-bottom:40px}
 h1{text-wrap:balance;font:800 clamp(44px,6.6vw,80px)/1 var(--head);letter-spacing:-.035em;margin:0 0 22px}
 .lead{font-size:clamp(18px,2.2vw,21px);line-height:1.55;max-width:30em;margin:0 0 30px;color:#C9D8E6}
 .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -82,7 +82,7 @@ h1{text-wrap:balance;font:800 clamp(44px,6.6vw,80px)/1 var(--head);letter-spacin
 .note{font-size:14px;color:#9FB6CB;margin-top:16px}
 .phone{justify-self:center;width:min(290px,76vw);aspect-ratio:9/16;border-radius:40px;padding:10px;background:#0B1F33;box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.1),0 0 80px rgba(25,211,162,.18);transform:rotate(2.2deg)}
 .phone video{width:100%;height:100%;object-fit:cover;border-radius:31px;display:block;background:#0B1F33}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:112px;gap:36px}.phone{transform:none}}
+@media (max-width:860px){.hero>.wrap{grid-template-columns:1fr;padding-top:112px;gap:36px}.phone{transform:none}}
 
 /* monitor strip */
 .mon{position:relative;height:176px;background:var(--screen);border-top:1px solid rgba(25,211,162,.25);
@@ -246,12 +246,14 @@ footer a{color:#fff}
 </style>
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
+<div data-brraio="banner" data-base=""></div>
+
+
+<div class="hero" id="top">
 <header class="nav"><div class="wrap">
   <a href="#top" aria-label="Brraio home"><img src="logo-horizontal-white.png" alt="Brraio" width="143" height="38"></a>
   <nav class="links"><a href="#try">Try one</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="partners/">Supporters</a><a href="blog/">Blog</a><a class="pill" href="https://brraio.netlify.app/">Open Brraio</a></nav>
 </div></header>
-
-<div class="hero" id="top">
   <div class="wrap">
     <div>
       <h1>Get confident reading ECGs.</h1>
@@ -268,6 +270,16 @@ footer a{color:#fff}
 </div>
 
 <main id="main">
+<section class="partners bs" id="supporters" aria-labelledby="supH"><div class="wrap">
+  <h2 id="supH">Free entry prize competition</h2>
+  <p class="sub">A new prize every month from brands that support our health workers. Do the weekly ECG Challenge in the Brraio app and the best interpretations win. Free to join, free to enter.</p>
+  <div class="pgrid2">
+    <div data-brraio="sponsor" data-base=""></div>
+    <div class="side"><span class="eyebrow" style="color:var(--muted)">Our supporters</span><div class="logos" data-brraio="logos" data-base=""></div>
+      <p><a class="btn" href="partners/">See all supporters</a> <a class="btn ghost2" href="partners/join/">Become a supporter</a></p></div>
+  </div>
+</div></section>
+
 <section class="try" id="try"><div class="wrap">
   <div>
     <h2>Try one. No sign-up.</h2>
@@ -343,16 +355,6 @@ footer a{color:#fff}
 <section class="teams"><div class="wrap">
   <div><h2>Training a whole crew or cohort?</h2><p>Group pricing for stations, services and universities. Tell us how many people and we'll send a quote.</p></div>
   <a class="btn dark" href="#contact">Ask for a quote</a>
-</div></section>
-
-<section class="partners bs" id="supporters" aria-labelledby="supH"><div class="wrap">
-  <h2 id="supH">Brands that support our health workers</h2>
-  <p class="sub">They put up our monthly prizes and deals, and help keep Brraio free to use.</p>
-  <div class="pgrid2">
-    <div data-brraio="sponsor" data-base=""></div>
-    <div class="side"><span class="eyebrow" style="color:var(--muted)">Our supporters</span><div class="logos" data-brraio="logos" data-base=""></div>
-      <p><a class="btn" href="partners/">See all supporters</a> <a class="btn ghost2" href="partners/join/">Become a supporter</a></p></div>
-  </div>
 </div></section>
 
 <section class="faq" id="faq"><div class="wrap">
