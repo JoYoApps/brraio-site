@@ -23,3 +23,17 @@
 .bs .logos a:hover{transform:translateY(-2px)}
 .bs .logos img{display:block;height:72px;width:auto}
 .bs .socl{font-size:15px;margin:0}.bs .socl a{color:#0B6E6A;font-weight:600}
+
+/* Competition banner: very top of the home page */
+.compbar{background:linear-gradient(100deg,#C2357A,#E0558F 55%,#F28C3A);color:#fff;font-family:Inter,sans-serif;position:relative;z-index:6}
+.compbar .cb-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));flex-wrap:wrap}
+.compbar .cb-logo{width:52px;height:52px;object-fit:contain;background:#fff;border-radius:12px;padding:4px;flex:none}
+.compbar .cb-txt{display:flex;flex-direction:column;gap:2px;flex:1 1 320px;min-width:0}
+.compbar .cb-tag{font:800 12px/1.2 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.95}
+.compbar strong{font:800 1.2rem/1.25 Poppins,sans-serif}
+.compbar .cb-how{font-size:14px;opacity:.95}
+.compbar .cb-acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.compbar .cb-go{background:#fff;color:#C2357A;font:800 15px/1 Inter,sans-serif;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.compbar .cb-more{color:#fff;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.compbar a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:620px){.compbar strong{font-size:1.05rem}.compbar .cb-logo{width:44px;height:44px}}
