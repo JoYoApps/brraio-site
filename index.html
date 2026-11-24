@@ -461,7 +461,16 @@ footer a{color:#fff}
     var b=e.target.closest(".opt"); if(!b||b.disabled)return;
     var ok=b.dataset.k==="b";
     [].forEach.call(opts.querySelectorAll(".opt"),function(o){o.disabled=true;if(o.dataset.k==="b")o.classList.add("right");else if(o===b)o.classList.add("wrong");else o.classList.add("dim");});
-    res.innerHTML='<div class="res"><p><b>'+(ok?"Spot on.":"Not quite.")+' It\'s atrial fibrillation.</b></p><p>The rhythm is irregularly irregular, the baseline wobbles, and there are no clear P waves before the narrow QRS complexes.</p><a class="btn go" href="https://brraio.netlify.app/">Practise hundreds more, free</a></div>';
+    res.innerHTML='<div class="res"><p><b>'+(ok?"Spot on.":"Not quite.")+' It\'s atrial fibrillation.</b></p><p>The rhythm is irregularly irregular, the baseline wobbles, and there are no clear P waves before the narrow QRS complexes.</p><a class="btn go" href="https://brraio.netlify.app/">Practise hundreds more, free</a> <button type="button" class="btn ghost2" id="chal" style="margin-top:10px">Challenge a colleague</button><p id="chalMsg" class="tiny" role="status" style="overflow-wrap:anywhere"></p></div>';
+    var ch=document.getElementById("chal");
+    if(ch)ch.addEventListener("click",function(){
+      var u="https://joyoapps.github.io/brraio-site/?utm_source=challenge&utm_medium=share#try",
+          t=(ok?"I got this ECG right":"This ECG caught me out")+". Reckon you can name the rhythm? Free, no sign-up:";
+      if(typeof gtag==="function")gtag("event","share",{method:navigator.share?"native":"copy",content_type:"try_strip"});
+      if(navigator.share){navigator.share({title:"Name this rhythm",text:t,url:u}).catch(function(){});}
+      else{var m=document.getElementById("chalMsg");
+        (navigator.clipboard?navigator.clipboard.writeText(t+" "+u):Promise.reject()).then(function(){m.textContent="Link copied. Send it to a colleague.";},function(){m.textContent="Send them this link: "+u;});}
+    });
   });}
 
   /* ---------- forms (unchanged) ---------- */
